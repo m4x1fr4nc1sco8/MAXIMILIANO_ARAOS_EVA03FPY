@@ -1,0 +1,121 @@
+FUNCIONES BÁSICAS
+formato de construcción: función(contenido)
+
+-len(x): Devuelve la longitud (el número de elementos) de x 
+-max(x): Devuelve el elemento más grande en x (x debe ser un iterable)
+-min(x): Devuelve el elemento más pequeño en x (x debe ser un iterable)
+-print(x): Imprime en la consola de comandos el contenido de x
+
+MÉTODOS STR
+formato de construcción: variable.metodo()
+
+-capitalize(): Convierte la primera letra de la cadena en mayúscula y las demás en minúsculas.
+-center(width, fillchar): Centra la cadena en un campo de ancho width utilizando el carácter fillchar para llenar espacios vacíos.
+-count(substring): Devuelve el número de veces que substring aparece en la cadena.
+-find(substring): Devuelve el índice de la primera aparición de substring en la cadena.
+-index(substring): Devuelve el índice de la primera aparición de substring en la cadena.
+-isalnum(): Devuelve True si la cadena solo contiene caracteres alfanuméricos.
+-isalpha(): Devuelve True si la cadena solo contiene caracteres alfabéticos.
+-isnumeric(): Devuelve True si la cadena solo contiene caracteres numéricos.
+-isspace(): Devuelve True si la cadena solo contiene espacios en blanco.
+-lower(): Convierte la cadena en minúsculas.
+-replace(old, new): Reemplaza todas las apariciones de old con new en la cadena.
+-split(sep, maxsplit): Divide la cadena en partes separadas por sep y devuelve una lista de las partes.
+-upper(): Convierte la cadena en mayúsculas.
+
+MÉTODOS LISTAS:
+formato de construcción: variable.metodo()
+
+-append(element): Agrega element al final de la lista.
+-clear(): Elimina todos los elementos de la lista.
+-count(element): Devuelve el número de veces que element aparece en la lista.
+-index(element): Devuelve el índice de la primera aparición de element en la lista.
+-insert(index, element): Agrega element en el índice index de la lista.
+-pop(index=-1): Elimina el elemento en el índice index y devuelve el elemento eliminado.
+-remove(element): Elimina el primer elemento que coincide con element en la lista.
+-reverse(): Invierte el orden de los elementos en la lista.
+-sort(): Ordena los elementos en la lista en orden ascendente.
+
+MÉTODOS DICCIONARIOS:
+formato de construcción: variable.metodo()
+
+-clear(): Elimina todos los elementos del diccionario.
+-items(): Devuelve una lista de pares clave-valor del diccionario.
+-keys(): Devuelve una lista de las claves del diccionario.
+-pop(key, default): Elimina el elemento con la clave key y devuelve su valor; si no existe, devuelve el valor default.
+-values(): Devuelve una lista de los valores del diccionario.
+
+MÉTODOS SETS:
+formato de construcción: variable.metodo()
+
+-add(element): Agrega element al set.
+-clear(): Elimina todos los elementos del set.
+-remove(element): Elimina element del set si existe.
+-union(set): Devuelve un nuevo set con todos los elementos del set actual y de set.
+
+
+LOOPS
+
+while True:
+    codigo
+
+while condicion:
+    codigo
+
+for alias in iterable:
+    codigo
+
+for alias1, alias2 in iterable:
+    codigo
+
+CONTROL DE LOOPS:
+
+break      -> Termina la ejecución del loop actual y salta a la próxima instrucción después del loop.
+continue   -> Salta a la próxima iteración del loop actual.
+pass       -> No hace nada y simplemente pasa a la próxima instrucción.
+
+
+PATH
+
+Ruta relativa:
+Path(__file__).parent
+
+Ruta absoluta:
+Path('D:/carpeta')
+
+Path(ruta).touch(): crea archivo
+Path(ruta).unlink(): elimina archivo
+Path(ruta).mkdir(): crea carpeta
+Path(ruta).rmdir(): elimina carpeta
+Path(ruta).exists(): devuelve True si la ruta referenciada existe y False si no existe
+Path(ruta).is_dir(): devuelve True si la ruta referenciada es una carpeta y False si no lo es
+Path(ruta).stat().st_size: devuelve el tamaño del contenido del archivo referenciado
+Path(ruta).iterdir(): convierte el contenido de la ruta en un iterable que puede ser recorrido con un loop for
+Path(ruta).glob('patron'): convierte el contenido de la ruta en un iterable que puede ser recorrido con un loop for buscando elementos que coincidan con el patron
+
+
+ABRIR ARCHIVOS PARA LECTURA:
+
+with open(ruta, mode='r') as stream:
+    txt = stream.read()
+    csv = [row for row in csv.reader(stream)]
+    json = json.load(stream)
+
+ABRIR ARCHIVOS PARA ESCRITURA:
+
+with open(ruta, mode='w') as stream:
+    stream.write(contenido) : agrega contenido al final del txt
+    json.dump(contenido, stream): agrega contenido al archivo json (sobreescribe todo, por tanto contenido debe tener todo el contenido actualizado) 
+
+with open(ruta, mode='w', newline='') as stream:
+    writer = csv.writer(stream)
+    writer.writerow(contenido): agrega contenido al final del archivo csv (solo sirve para agregar una linea)
+
+FUNCIONES:
+
+def nombre_funcion(param):
+    contenido
+
+LLAMAR FUNCION:
+
+nombre_funcion(param)
